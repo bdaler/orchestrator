@@ -1,0 +1,3 @@
+[submodule "services/api-profiles"]
+	path = services/api-profiles
+	url = git@github.com:bdaler/api-profiles.git
