@@ -1,0 +1,16 @@
+;
+; This is the php.ini-development INI file.
+;
+
+; Maximum amount of memory a script may consume (128MB)
+; http://php.net/memory-limit
+memory_limit = 512M
+post_max_size = 512M
+upload_max_filesize = 0
+
+; Production params
+
+; Disable opcache
+opcache.enable=0
+
+error_log = /var/log/php_error.log

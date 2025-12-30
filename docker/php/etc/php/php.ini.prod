@@ -1,0 +1,32 @@
+;
+; This is the php.ini-production INI file.
+;
+
+; Maximum amount of memory a script may consume (128MB)
+; http://php.net/memory-limit
+memory_limit = 1024M
+post_max_size = 512M
+upload_max_filesize = 0
+
+; Production params
+
+; Enable opcache
+opcache.enable=1
+
+; maximum memory that OPcache can use to store compiled PHP files
+opcache.memory_consumption=256
+
+; maximum number of files that can be stored in the cache
+opcache.max_accelerated_files=20000
+
+; maximum memory allocated to store the results
+realpath_cache_size=4096K
+
+; save the results for 10 minutes (600 seconds)
+realpath_cache_ttl=600
+
+; don't check PHP files timestamps
+; https://symfony.com/doc/5.3/performance.html#don-t-check-php-files-timestamps
+opcache.validate_timestamps=0
+
+error_log = /var/log/php_error.log
