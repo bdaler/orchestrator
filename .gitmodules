@@ -1,6 +1,8 @@
 [submodule "services/api-profiles"]
 	path = services/api-profiles
 	url = git@github.com:bdaler/api-profiles.git
+    branch = main
 [submodule "services/api-qr-link"]
 	path = services/api-qr-link
 	url = git@github.com:bdaler/api-qr-link.git
+    branch = main
