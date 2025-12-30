@@ -21,8 +21,8 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}-nginx
     image: nginx:1.25-alpine
     ports:
-      - ${PORT_CLIENT_HTTP}:80
-      - ${PORT_API_NOTIFICATION}:8081
+      - ${PORT_API_PROFILES}:80
+      - ${PORT_API_QR_LINK}:81
     volumes:
       - ${SERVER_HOME}/docker/nginx/configs/nginx.conf:/etc/nginx/nginx.conf
       - ${SERVER_HOME}/docker/nginx/configs/htpasswd:/etc/nginx/htpasswd
@@ -57,6 +57,14 @@ services:
       - *php-ini
       - *www-conf
       - ${SERVER_HOME}/services/api-profiles:/var/www
+
+  api-qr-link:
+    container_name: api-qr-link
+    <<: *base_php_app
+    volumes:
+      - *php-ini
+      - *www-conf
+      - ${SERVER_HOME}/services/api-qr-link:/var/www
 
 #============ PHP kafka consumers ============#
 #  enterprise1c_requests_transport:
